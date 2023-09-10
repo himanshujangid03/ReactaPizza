@@ -1,0 +1,154 @@
+.navbar {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  background-color: #ffffffd7;
+  height: fit-content;
+  margin: 0 0 2rem 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(207, 207, 207, 0.705);
+  z-index: 99999;
+  backdrop-filter: blur(3px);
+}
+
+.navbar button {
+  margin: 0 1rem 0 1rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0;
+  font-weight: bold;
+  color: black;
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40rem;
+}
+
+.nav-right ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+}
+
+.new-pizza-lst {
+  margin: 0 1rem 0 1rem;
+  border-radius: 1rem;
+  width: fit-content;
+  border: none;
+  background-color: rgba(235, 235, 235, 0);
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Roboto Mono", sans-serif;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.login-btn {
+  margin: 0 1rem 0 1rem;
+  border-radius: 1rem;
+  width: 10rem;
+  border: none;
+  background-color: rgba(235, 235, 235, 0);
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Roboto Mono", sans-serif;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  text-align: center;
+}
+
+.login-btn a {
+  text-decoration: none;
+  color: rgb(58, 58, 58);
+  padding: 1rem 3rem 1rem 3rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+.new-pizza-lst a {
+  text-decoration: none;
+  color: rgb(54, 54, 54);
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.new-pizza-lst:hover {
+  color: black;
+}
+
+a.active {
+  text-decoration: none;
+  color: black;
+  background-color: #e9e9e9;
+}
+
+/*-------------------------       MODAL      -------------------------*/
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.637);
+}
+
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: black;
+  max-width: 600px;
+  max-height: 300px;
+  padding: 1rem;
+  border-radius: 7px;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  margin: 0.5rem;
+}
+
+.open-btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/*-------------------------       MODAL      -------------------------*/

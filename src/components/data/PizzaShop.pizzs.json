@@ -1,0 +1,275 @@
+{
+  "backupPizzaData": [
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a76"
+      },
+      "name": "Margherita",
+      "price": 10.99,
+      "ingredients": "Classic pizza topped with fresh tomatoes, mozzarella cheeses.",
+      "photoName": "pizzas/focaccia.jpg",
+      "Rating": 4.4,
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a77"
+      },
+      "name": "Pepperoni Feast",
+      "price": 12.99,
+      "ingredients": "Loaded with generous amounts of pepperoni, cheese, and tangy tomato sauce.",
+      "Rating": 4.7,
+      "photoName": "pizzas/margherita.jpg",
+      "soldOut": "True"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a78"
+      },
+      "name": "Veggie Delight",
+      "price": 11.99,
+      "ingredients": "A vegetarian's dream pizza with a colorful medley of fresh vegetables.",
+      "Rating": 1,
+      "photoName": "pizzas/focaccia.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a79"
+      },
+      "name": "Hawaiian Paradise",
+      "price": 13.99,
+      "ingredients": "Sweet and savory combination of ham, pineapple, and.",
+      "Rating": 3.6,
+      "photoName": "pizzas/margherita.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a7a"
+      },
+      "name": "BBQ Chicken",
+      "price": 14.99,
+      "ingredients": "Tender chicken, tangy BBQ sauce, onions, and cheese.",
+      "Rating": 1.4,
+      "photoName": "pizzas/spinaci.jpg",
+      "soldOut": "True"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a7b"
+      },
+      "name": "Meat Lover's",
+      "price": 15.99,
+      "ingredients": "A carnivore's delight with a hearty mix of pepperoni.",
+      "Rating": 4.1,
+      "photoName": "pizzas/margherita.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a7c"
+      },
+      "name": "Mediterranean",
+      "price": 13.99,
+      "ingredients": "A taste of the Mediterranean with toppings like olives.",
+      "Rating": 2.6,
+      "photoName": "pizzas/focaccia.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a7d"
+      },
+      "name": "Four Cheese",
+      "price": 12.99,
+      "ingredients": "A cheese lover's paradise, featuring a blend of mozzarella.",
+      "Rating": 1.9,
+      "photoName": "pizzas/spinaci.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a7e"
+      },
+      "name": "Supreme",
+      "price": 14.99,
+      "ingredients": "Packed with a variety of toppings like pepperoni.",
+      "Rating": 4.5,
+      "photoName": "pizzas/salamino.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a7f"
+      },
+      "name": "Buffalo Chicken",
+      "price": 13.99,
+      "ingredients": "Spicy buffalo sauce, tender chicken, and melted cheese.",
+      "Rating": 3.6,
+      "photoName": "pizzas/funghi.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a80"
+      },
+      "name": "Margherita Stuffed Crust",
+      "price": 13.99,
+      "ingredients": "Classic Margherita pizza with a delicious stuffed crust.",
+      "Rating": 3.8,
+      "photoName": "pizzas/focaccia.jpg",
+      "soldOut": "True"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a81"
+      },
+      "name": "Spinach and Feta",
+      "price": 12.99,
+      "ingredients": "A healthy option with fresh spinach, creamy feta cheese",
+      "Rating": 4.9,
+      "photoName": "pizzas/margherita.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a82"
+      },
+      "name": "BBQ Bacon Cheeseburger",
+      "price": 15.99,
+      "ingredients": "All the flavors of a cheeseburger topped with BBQ.",
+      "Rating": 4.2,
+      "photoName": "pizzas/prosciutto.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a83"
+      },
+      "name": "Pesto Chicken",
+      "price": 14.99,
+      "ingredients": "Grilled chicken, pesto sauce, roasted garlic",
+      "Rating": 2.3,
+      "photoName": "pizzas/salamino.jpg",
+      "soldOut": "True"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a84"
+      },
+      "name": "Taco Pizza",
+      "price": 13.99,
+      "ingredients": "A Tex-Mex twist with seasoned ground beef, salsa",
+      "Rating": 1.5,
+      "photoName": "pizzas/focaccia.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a85"
+      },
+      "name": "Garlic Shrimp",
+      "price": 16.99,
+      "ingredients": "Succulent shrimp, roasted garlic, and a blend of cheeses",
+      "Rating": 4.2,
+      "photoName": "pizzas/margherita.jpg",
+      "soldOut": "True"
+    },
+    {
+      "_id": {
+        "$oid": "64f443d2f6200b0bef802a86"
+      },
+      "name": "Barbecue Pulled Pork",
+      "price": 15.99,
+      "ingredients": "Slow-cooked pulled pork, tangy BBQ sauce, onions, and cheese make for a delicious treat.",
+      "Rating": 3.5,
+      "photoName": "pizzas/funghi.jpg",
+      "soldOut": "False"
+    },
+    {
+      "_id": {
+        "$oid": "64f452546b80249d12adeff8"
+      },
+      "name": "Neapolitan Pizza",
+      "ingredients": "Neapolitan pizza is the classic Italian-style pizza that originated in Naples.",
+      "price": 12.5,
+      "Rating": 2.5,
+      "photoName": "https://www.realsimple.com/thmb/yRTO5WatgVxwodleo3dIcSxTpvg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/neapolitan-pizza-0519foo-1-4e4a832b859945a1b16fdb10d0601934.jpg",
+      "soldOut": false,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "64f456cc4590c57949a3ebc5"
+      },
+      "name": "Sicilian Pizza",
+      "ingredients": "Sicilian pizza hails from Sicily, Italy, and is known for its thick and rectangular shape.",
+      "price": 10.5,
+      "Rating": 2.5,
+      "photoName": "https://www.insidetherustickitchen.com/wp-content/uploads/2020/04/Sicilian-pizza-1200px-Inside-the-Rustic-Kitchen.jpg",
+      "soldOut": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "64f458d35855efb39f3e230a"
+      },
+      "name": "Chicago Pizza",
+      "ingredients": "Sicilian pizza hails from Sicily, Italy, and is known for its thick and rectangular shape.",
+      "price": 5,
+      "Rating": 2.6,
+      "photoName": "https://www.insidetherustickitchen.com/wp-content/uploads/2020/04/Sicilian-pizza-1200px-Inside-the-Rustic-Kitchen.jpg",
+      "soldOut": true,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "64f45a08c06b9e5da0d8c1e4"
+      },
+      "name": "New York-Style Pizza",
+      "ingredients": "Sicilian pizza hails from Sicily, Italy, and is known for its thick and rectangular shape.",
+      "price": 45,
+      "Rating": 2.5,
+      "photoName": "https://www.insidetherustickitchen.com/wp-content/uploads/2020/04/Sicilian-pizza-1200px-Inside-the-Rustic-Kitchen.jpg",
+      "soldOut": null,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "64f6b898fcf6603e6a45eb99"
+      },
+      "name": "Indian-Style Pizza",
+      "ingredients": "India has also developed its own unique style of pizza.",
+      "price": 15.6,
+      "Rating": 4.6,
+      "photoName": "https://thebrilliantkitchen.com/wp-content/uploads/2023/01/Indian-Pizza.jpeg",
+      "soldOut": null,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "64f85ce5462e49b0db8be75a"
+      },
+      "name": "Paneer Tikka Pizza",
+      "ingredients": "Paneer tikka pizza is a vegetarian delight that showcases a crust topped with paneer tikka, onion, capsicum, and a flavorful tomato sauce.",
+      "price": 23.4,
+      "Rating": 4.5,
+      "photoName": "https://www.vegrecipesofindia.com/wp-content/uploads/2013/10/paneer-tikka-pizza-recipe-1.jpg",
+      "soldOut": null,
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "64f877222745e0ff567ef964"
+      },
+      "name": "Sicilian Dummy",
+      "ingredients": "Sicilian pizza hails from Sicily, Italy, and is known for its thick and rectangular shape.",
+      "price": 12.5,
+      "Rating": 2.6,
+      "photoName": "https://www.insidetherustickitchen.com/wp-content/uploads/2020/04/Sicilian-pizza-1200px-Inside-the-Rustic-Kitchen.jpg",
+      "soldOut": true,
+      "__v": 0
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+.cartPizza__div {
+  width: 100%;
+}
+
+.cartPizzas {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.cartPizza {
+  margin: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  transition: all 0.2s;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e2d19a7c;
+  filter: drop-shadow(50% black);
+  user-select: none;
+}
+
+.cartPizza img {
+  display: block;
+  width: 12rem;
+  aspect-ratio: 1;
+  border-radius: 1.5rem;
+  height: 20rem;
+  width: 20rem;
+}
+
+.cartPizza div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0.4rem 0;
+  border-radius: 7px;
+}
+
+.cartPizza h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.cartPizza p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: auto;
+}
+
+.cartPizza span {
+  font-size: 1.6rem;
+}
+
+.cartPizza.sold-out {
+  color: #888;
+}
+
+.cartPizza.sold-out img {
+  filter: grayscale();
+  opacity: 0.8;
+}
+
+.cartPizza .shopping-cart {
+  size: 3rem;
+}
+
+.cartPizza .rating-price {
+  height: 100%;
+  padding: 0 15px 0 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating-price .calPrice-cart-btn {
+  height: 100%;
+}
+
+.calPrice-cart-btn p {
+  font-size: 2rem;
+  color: black;
+  font-weight: 600;
+}
+
+.cartPizza .rating-price button {
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 16px;
+  background-color: #d1b65c4f;
+  cursor: pointer;
+  color: grey;
+  font-family: "Roboto Mono", sans-serif;
+}
+
+.cartPizza .rating-price button.disable {
+  cursor: not-allowed;
+  background-color: rgba(128, 128, 128, 0.082);
+}
+
+.cartPizza .rating-price button.disable:hover {
+  background-color: rgba(128, 128, 128, 0.082);
+  color: gray;
+}
+
+.cartPizza .rating-price button:hover {
+  color: black;
+  background-color: #d1b65c85;
+}
+
+.shopping-cart {
+  font-size: 5rem;
+  font-weight: bolder;
+  text-align: center;
+  font-family: "Roboto Mono", sans-serif;
+  margin: 1rem;
+}
+
+.cart-icon-badge a {
+  text-decoration: none;
+}
+
+.item-length {
+  margin: 3rem auto;
+}
+
+.item-length p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(109, 109, 109);
+  margin: 0 0 0 2rem;
+}
+
+hr {
+  height: 2px;
+  background-color: rgba(128, 128, 128, 0.61);
+  margin: 5px;
+}
+
+.font-awesome-cart {
+  font-size: 3rem;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1.01);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.badge {
+  position: relative;
+  top: -2.1rem;
+  left: -10px;
+  padding: 2px 6px 3px 6px;
+  background-color: #6200d1;
+  border-radius: 100%;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.hidden {
+  display: none;
+}
+
+.font-awesome-trash {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.font-awesome-trash:hover {
+  color: rgb(180, 2, 2);
+}
+
+.rating-price .price-increment-btn {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.price-increment-btn p {
+  display: flex;
+  text-align: center;
+  margin: 0 1rem 0 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
+}
+
+.price-increment-btn span {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  background-color: #ffe600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.price-increment-btn span.animate {
+  animation: bounce 0.2s;
+}
+
+@keyframes bounce {
+  from {
+    transform: scale(0.98);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/*---------------        CART ITEM   -------------------*/
