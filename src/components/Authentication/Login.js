@@ -1,5 +1,6 @@
-import { Form, NavLink } from "react-router-dom";
+import { Form, NavLink, redirect } from "react-router-dom";
 import "./form.css";
+import { loginAPI } from "../Context/api";
 
 function Login() {
   return (
@@ -32,3 +33,26 @@ function Login() {
 }
 
 export default Login;
+
+export async function loginLoader({ request, params }) {
+  const data = await request.formData();
+  const userData = {
+    name: data.get("name"),
+    email: data.get("email"),
+    password: data.get("password"),
+    passwordConfirm: data.get("passwordConfirm"),
+  };
+
+  const response = fetch(loginAPI, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
+
+  if (response.status === 404) {
+    return response;
+  }
+  return redirect("/");
+}
