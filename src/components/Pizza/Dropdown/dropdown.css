@@ -13,6 +13,7 @@
   background-color: white;
   position: relative;
   user-select: none;
+  z-index: 99;
 }
 
 .dropdown .dropdown-btn {

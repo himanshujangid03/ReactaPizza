@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import "./dropdown.css";
-import { sortByPriceAPI, sortByRatingAPI } from "../../Context/api";
+import { API, sortByPriceAPI, sortByRatingAPI } from "../../Context/api";
 import AuthContext from "../../Context/auth-context";
 //import { useRouteLoaderData } from "react-router";
 
@@ -18,6 +18,12 @@ const Dropdown = () => {
 
   const ratingHandler = () => {
     ctx.setSortQuery(sortByRatingAPI);
+    console.log(ctx.sortQuery);
+    setIsAcive(false);
+  };
+  const clearHandler = () => {
+    ctx.setSortQuery(API);
+    console.log(ctx.sortQuery);
     setIsAcive(false);
   };
 
@@ -52,6 +58,9 @@ const Dropdown = () => {
               onClick={ratingHandler}
             >
               Rating
+            </div>
+            <div className="dropdown-item" onClick={clearHandler}>
+              Clear All
             </div>
           </div>
         )}
