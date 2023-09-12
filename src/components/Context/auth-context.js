@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { API } from "./api";
+import { API, sortByPriceAPI, sortByRatingAPI } from "./api";
 
 const AuthContext = React.createContext({
   cartItem: Array,

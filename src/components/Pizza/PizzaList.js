@@ -1,23 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import Pizza from "./Pizza";
 import Util from "./Util";
-import AuthContext from "../Context/auth-context";
+import { API } from "../Context/api";
+import { useRouteLoaderData } from "react-router-dom";
 
 const PizzaList = (props) => {
-  //const pizzaData = useRouteLoaderData("pizza-loader");
+  const pizzaData = useRouteLoaderData("pizza-loader");
   const [query, setQuery] = useState("");
-  const [pizzaData, setPizzaData] = useState([]);
-  const ctx = useContext(AuthContext);
-
-  const fetchPizza = async () => {
-    const res = await fetch(ctx.sortQuery);
-    const data = await res.json();
-    setPizzaData(data);
-  };
-
-  useEffect(() => {
-    fetchPizza();
-  });
 
   const filteredPizzas = query
     ? pizzaData.filter((item) =>
@@ -70,10 +59,9 @@ const PizzaList = (props) => {
 
 export default PizzaList;
 
-/* export async function loader() {
-  const response = await fetch(apiHandler(2), {
+export async function loader() {
+  const response = await fetch(API, {
     method: "GET",
   });
   return response;
 }
- */
