@@ -1,12 +1,36 @@
-import { Form, NavLink, redirect } from "react-router-dom";
+import { Form, Link, NavLink, redirect, useActionData } from "react-router-dom";
 import "./form.css";
 import { loginAPI } from "../Context/api";
+import ErrorAuthModal from "./ErrorAuthModal";
+import { useState, useEffect } from "react";
 
-function Login() {
+function Login(props) {
+  const [errModal, setErrModal] = useState(false);
+  let data = useActionData();
+
+  const errorModalHandler = () => {
+    if (data) {
+      setErrModal(true);
+    }
+  };
+
+  if (!data) {
+    data = "Welcome you are successfully logged in!";
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setErrModal(false);
+    }, 1500);
+  }, [errModal]);
   return (
     <>
       <div className="login-form">
-        <Form>
+        <Link to={"/"}>
+          <p className="link-to-home">Back to home page</p>
+        </Link>
+        {errModal && <ErrorAuthModal data={data} />}
+        <Form method="post" autoComplete="off">
           <p>Login to your Account</p>
           <label>Email</label>
           <input
@@ -22,11 +46,13 @@ function Login() {
             name="password"
             placeholder="please enter your password"
           />
-          <button className="submit-btn">Submit</button>
+          <button className="submit-btn" onClick={errorModalHandler}>
+            Submit
+          </button>
+          <p className="login-form-p">
+            Don't have an account! <NavLink to={"/signup"}>SignUp</NavLink>
+          </p>
         </Form>
-        <p className="login-form-p">
-          Don't have an account! <NavLink to={"/signup"}>SignUp</NavLink>
-        </p>
       </div>
     </>
   );
@@ -34,16 +60,14 @@ function Login() {
 
 export default Login;
 
-export async function loginLoader({ request, params }) {
+export async function loginAction({ request, params }) {
   const data = await request.formData();
   const userData = {
-    name: data.get("name"),
     email: data.get("email"),
     password: data.get("password"),
-    passwordConfirm: data.get("passwordConfirm"),
   };
 
-  const response = fetch(loginAPI, {
+  const response = await fetch(loginAPI, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +75,7 @@ export async function loginLoader({ request, params }) {
     body: JSON.stringify(userData),
   });
 
-  if (response.status === 404) {
+  if (!response.ok) {
     return response;
   }
   return redirect("/");

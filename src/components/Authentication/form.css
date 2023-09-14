@@ -6,8 +6,15 @@
   align-items: center;
 }
 
+.login-form .link-to-home {
+  display: flex;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+
 .login-form .login-form-p {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0rem 0 1rem 0;
   text-align: center;
 }
@@ -26,7 +33,7 @@
 .login-form Form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   border: 2px solid rgba(212, 212, 212, 0.705);
   padding: 2rem;
   border-radius: 2.5rem;
@@ -35,6 +42,7 @@
 }
 .login-form Form p {
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .login-form label {

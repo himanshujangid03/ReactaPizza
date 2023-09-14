@@ -6,7 +6,7 @@ import NewPizza, {
 } from "./components/Pizza/NewPizza";
 import Error from "./components/pages/Error";
 import Cart from "./components/navigation/Cart";
-import Login from "./components/Authentication/Login";
+import Login, { loginAction } from "./components/Authentication/Login";
 import SignUp, { signUpAction } from "./components/Authentication/SignUp";
 
 const router = createBrowserRouter([
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       { path: "/cart", element: <Cart /> },
     ],
   },
-  { path: "/login", element: <Login /> },
+  { path: "/login", element: <Login />, action: loginAction },
   { path: "/signup", element: <SignUp />, action: signUpAction },
 ]);
 

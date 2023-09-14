@@ -1,14 +1,31 @@
-import { Form, NavLink, redirect, useActionData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Form, Link, redirect, useActionData } from "react-router-dom";
 import { signUpAPI } from "../Context/api";
 import ErrorAuthModal from "./ErrorAuthModal";
 
-const SignUp = () => {
+const SignUp = (props) => {
   const data = useActionData();
+  const [errModal, setErrModal] = useState(false);
+
+  const errorModalHandler = () => {
+    if (data) {
+      setErrModal(true);
+    }
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setErrModal(false);
+    }, 1500);
+  }, [errModal]);
 
   return (
     <>
       <div className="login-form">
-        <ErrorAuthModal data={data} />
+        <Link to={"/"}>
+          <p className="link-to-home">Back to home page</p>
+        </Link>
+        {errModal && <ErrorAuthModal data={data} />}
         <Form method="post">
           <p>Create your new Account</p>
           <label>Name</label>
@@ -39,11 +56,13 @@ const SignUp = () => {
             name="passwordConfirm"
             placeholder="please confirm your password"
           />
-          <button className="submit-btn">Submit</button>
+          <button className="submit-btn" onClick={errorModalHandler}>
+            Submit
+          </button>
+          <p className="login-form-p">
+            Already have an account! <Link to={`/login`}>Login</Link>
+          </p>
         </Form>
-        <p className="login-form-p">
-          Already have an account! <NavLink to={"/login"}>Login</NavLink>
-        </p>
       </div>
     </>
   );
