@@ -1,18 +1,29 @@
-import { useContext, useState } from "react";
-import AuthContext from "../Context/auth-context";
-import FormDesign from "./FormDesign";
+import { Link } from "react-router-dom";
+import "./errorAuthModal.css";
 
 function FormModal(props) {
-  //const ctx = useContext(AuthContext);
-
   return (
     <>
       <div className="modal">
-        <div className="overlay" onClick={props.closeModal}></div>
+        <div className="overlay"></div>
         <div className="modal-content">
-          <div className="modal-design">
-            <FormDesign />
-            {props.children}
+          <div className="close-modal-btn" onClick={props.onClose}>
+            <p>X</p>
+          </div>
+          <h2>Welcome to ReactPizza</h2>
+          <p>
+            Whether you're a new user or returning, we're thrilled to have you
+            here! Our platform is designed to provide you with a seamless
+            experience.
+          </p>
+          <h3>Let's Get Started!</h3>
+          <div className="form-btn">
+            <Link to={"/login"}>
+              <button>Login</button>
+            </Link>
+            <Link to={"/signUp"}>
+              <button>SignUp</button>
+            </Link>
           </div>
         </div>
       </div>

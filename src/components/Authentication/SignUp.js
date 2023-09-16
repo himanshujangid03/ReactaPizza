@@ -4,19 +4,21 @@ import { signUpAPI } from "../Context/api";
 import ErrorAuthModal from "./ErrorAuthModal";
 
 const SignUp = (props) => {
-  const data = useActionData();
+  let data = useActionData();
   const [errModal, setErrModal] = useState(false);
 
   const errorModalHandler = () => {
     if (data) {
-      setErrModal(true);
+      setErrModal((el) => !el);
     }
   };
+
+  const signedUpMessage = "You are Signed in successfully!";
 
   useEffect(() => {
     setTimeout(() => {
       setErrModal(false);
-    }, 1500);
+    }, 1000);
   }, [errModal]);
 
   return (
@@ -25,7 +27,9 @@ const SignUp = (props) => {
         <Link to={"/"}>
           <p className="link-to-home">Back to home page</p>
         </Link>
-        {errModal && <ErrorAuthModal data={data} />}
+        {errModal && (
+          <ErrorAuthModal data={data} signedUpMessage={signedUpMessage} />
+        )}
         <Form method="post">
           <p>Create your new Account</p>
           <label>Name</label>

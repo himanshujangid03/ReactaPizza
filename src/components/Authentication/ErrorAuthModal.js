@@ -1,17 +1,16 @@
-import { useEffect } from "react";
 import "./errorAuthModal.css";
-import { useRouteError } from "react-router";
 
 function ErrorAuthModal(props) {
+  const message = props.data.message;
   return (
     <>
-      {
-        <div className={`errorAuthModal ${!props.data ? "isLogin" : ""}`}>
-          <p>{`${
-            props.data ? props.data : "Welcome you are successfully logged in!"
-          }`}</p>
-        </div>
-      }
+      <div className={`errorAuthModal ${!props.data ? "isLogin" : ""}`}>
+        <p>
+          {props.data
+            ? message
+            : props.loggedInMessage || props.signedUpMessage}
+        </p>
+      </div>
     </>
   );
 }

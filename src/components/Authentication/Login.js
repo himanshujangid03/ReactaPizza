@@ -6,30 +6,27 @@ import { useState, useEffect } from "react";
 
 function Login(props) {
   const [errModal, setErrModal] = useState(false);
-  let data = useActionData();
+  const data = useActionData();
 
   const errorModalHandler = () => {
-    if (data) {
-      setErrModal(true);
-    }
-  };
-
-  if (!data) {
-    data = "Welcome you are successfully logged in!";
-  }
-
-  useEffect(() => {
+    if (data) setErrModal(true);
     setTimeout(() => {
       setErrModal(false);
-    }, 1500);
-  }, [errModal]);
+    }, 1000);
+  };
+
+  const loggedInMessage = "Welcome you are successfully logged in!";
+
+  //useEffect(() => {}, [errModal]);
   return (
     <>
       <div className="login-form">
         <Link to={"/"}>
           <p className="link-to-home">Back to home page</p>
         </Link>
-        {errModal && <ErrorAuthModal data={data} />}
+        {errModal && (
+          <ErrorAuthModal data={data} loggedInMessage={loggedInMessage} />
+        )}
         <Form method="post" autoComplete="off">
           <p>Login to your Account</p>
           <label>Email</label>
@@ -78,5 +75,6 @@ export async function loginAction({ request, params }) {
   if (!response.ok) {
     return response;
   }
+
   return redirect("/");
 }

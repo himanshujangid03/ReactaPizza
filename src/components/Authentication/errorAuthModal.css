@@ -2,7 +2,7 @@
   position: absolute;
   top: 10%;
   padding: 1.5rem;
-  background-color: rgb(255, 181, 181);
+  background-color: rgb(255, 98, 98);
   width: 60rem;
   max-width: 90%;
   border-radius: 1.5rem;
@@ -11,15 +11,15 @@
   animation: popupAnimation 0.2s;
 }
 
-.errorAuthModal,
-.isLogin {
-  background-color: rgb(154, 255, 154);
+.errorAuthModal.isLogin {
+  background-color: rgb(111, 255, 111);
+  transition: none;
 }
 
 @keyframes popupAnimation {
   from {
     opacity: 0.5;
-    transform: translateY(-5rem);
+    transform: translateY(-2rem);
   }
   to {
     opacity: 1;
@@ -32,3 +32,103 @@
   text-align: center;
   margin: 0.5rem;
 }
+
+/* -----------------------------  FORM MODAL ----------------------------*/
+
+.modal,
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.637);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  padding: 1rem;
+  width: 70rem;
+  max-width: 90%;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  font-weight: 100;
+}
+
+.close-modal-btn {
+  display: flex;
+  align-self: flex-end;
+  font-size: 1.5rem;
+
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+}
+
+.close-modal-btn:hover {
+  background-color: rgb(51, 51, 51);
+}
+
+.close-modal-btn p {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content h2 {
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: 100;
+  margin: 1rem;
+}
+.modal-content h3 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 100;
+  margin: 1rem;
+}
+
+.modal-content p {
+  font-size: 1.5rem;
+
+  text-align: center;
+  margin: 1rem;
+}
+
+.modal-content .form-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.form-btn button {
+  margin: 1rem;
+  padding: 1rem;
+  width: 15rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  border: none;
+  font-size: 2rem;
+  background-color: rgb(56, 56, 56);
+  color: white;
+  transition: all 0.2s;
+}
+
+.form-btn button:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+/* -----------------------------  FORM MODAL ----------------------------*/
