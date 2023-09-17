@@ -4,7 +4,7 @@ Welcome to ReactPizza, a full-stack web application built using the MERN (MongoD
 
 ## Project Demo
 
-[Watch the demo video](https://drive.google.com/file/d/1AfWlS8-GZaMAkrGeA1z1IR6Jh5_LPC6O/view)
+[Watch the demo video](https://drive.google.com/file/d/13BokCSpkqXPFn-JXP7OIP8IG1R9M7BcB/view?usp=sharing)
 
 ## Project Status
 
