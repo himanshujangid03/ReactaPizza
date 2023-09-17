@@ -9,12 +9,15 @@ function RootLayout() {
   function onClose() {
     setIsModal(false);
   }
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsModal(true);
-    }, 1000);
-  }, []);
+    if (!token) {
+      setTimeout(() => {
+        setIsModal(true);
+      }, 1000);
+    }
+  }, [token]);
   return (
     <>
       {isModal && <FormModal onClose={onClose} />}

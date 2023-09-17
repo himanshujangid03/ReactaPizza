@@ -11,26 +11,29 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background-color: #f5f5f5d5;
-  border: 2px solid rgb(187, 187, 187);
+  background-color: #ffffffd5;
+  border: none;
   border-radius: 2rem;
 }
 
 .new-form Form h2 {
+  margin-bottom: 1rem;
   text-align: center;
-  font-size: 4rem;
+  font-size: 5rem;
+  font-family: "Fira Sans", sans-serif;
   text-transform: uppercase;
 }
 
 .new-form input {
   width: 60rem;
-  height: 4rem;
+  height: 5rem;
   outline: none;
-  border: 1px solid rgb(212, 211, 211);
-  border-radius: 5px;
+  border: none;
+  border-radius: 1rem;
   margin: 0.5rem;
   padding: 1rem;
   font-size: 1.8rem;
+  background-color: rgb(245, 245, 245);
 }
 
 .new-form label {
@@ -54,23 +57,34 @@
   margin: 0 0 0 1rem;
 }
 
-.submit-btn {
-  padding: 1rem;
-  border-radius: 1rem;
-  width: 20rem;
-  border: 2px solid rgb(214, 213, 213);
-  background-color: white;
-  color: #ac8403;
-  font-size: 1.5rem;
-  font-weight: 600;
-  font-family: "Roboto Mono", sans-serif;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-  margin: 1rem auto;
+/* -------------------------- ADMIN SECTION   -------------------------------*/
+
+.new-form___admin {
+  width: 80rem;
+  max-width: 90%;
+  margin: 5rem auto;
+  text-align: center;
 }
 
-.submit-btn:hover {
-  color: white;
-  background-color: black;
-  transform: scale(1.05);
+.new-form___admin h2 {
+  font-size: 6rem;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 100;
 }
+
+.new-form___admin span {
+  background-image: radial-gradient(
+    circle at 120.71% 50%,
+    #fc5dc9 0,
+    #d955c1 16.67%,
+    #b34cb2 33.33%,
+    #8b409e 50%,
+    #653488 66.67%,
+    #442a74 83.33%,
+    #272161 100%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* -------------------------- ADMIN SECTION   -------------------------------*/

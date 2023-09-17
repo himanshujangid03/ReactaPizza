@@ -20,6 +20,7 @@ const NavBar = (props) => {
     return isActive ? "active" : "";
   };
   const ctx = useContext(AuthContext);
+  const token = localStorage.getItem("token");
   return (
     <>
       <></>
@@ -51,8 +52,8 @@ const NavBar = (props) => {
               </NavLink>
             </li>
             <li className="login-btn">
-              <NavLink to={"/login"} className={navLinkClass}>
-                Login
+              <NavLink to={`/login`} className={navLinkClass}>
+                {token ? "Logout" : "Login"}
               </NavLink>
             </li>
           </ul>

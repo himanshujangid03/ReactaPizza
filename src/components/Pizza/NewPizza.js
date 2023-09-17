@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, json, redirect } from "react-router-dom";
+import { Form, Link, json, redirect } from "react-router-dom";
 import { postNewPizza } from "../Context/api";
 import "./pizza-detail.css";
 
@@ -8,64 +8,81 @@ function NewPizza() {
   function soldOutHandler(e) {
     setSold((el) => !el);
   }
+
+  const token = localStorage.getItem("token");
   return (
     <>
-      <div className="new-form">
-        <Form method="post">
-          <h2>Post a new Pizza</h2>
-          <label>Name</label>
-          <input
-            type="text"
-            required
-            placeholder="Choose a name..."
-            name="name"
-          />
-          <label>Ingredients</label>
-          <input
-            type="text"
-            placeholder="Name the ingredients used..."
-            name="ingredients"
-            required
-          />
-          <label>price</label>
-          <input
-            step="0.1"
-            min="0"
-            placeholder="set the price..."
-            type="number"
-            name="price"
-            required
-          />
-          <label>Rating</label>
-          <input
-            step="0.1"
-            min="1"
-            max="5"
-            placeholder="set the rating..."
-            type="number"
-            name="Rating"
-            required
-          />
-          <label>Image</label>
-          <input
-            type="text"
-            placeholder="set the image..."
-            name="photoName"
-            required
-          />
-          <div className="checkbox-div">
-            <label>sold Out</label>
-            <input
-              type="checkBox"
-              name="soldOut"
-              value={sold ? sold : "false"}
-              onChange={soldOutHandler}
-              className="checkbox"
-            />
+      {!token ? (
+        <>
+          <div className="new-form___admin">
+            <h2>
+              Login as an <span>Admin</span> to get access
+            </h2>
+            <Link to={`/login`}>
+              <button className="submit-btn">Login</button>
+            </Link>
           </div>
-          <button className="submit-btn">Add Pizza</button>
-        </Form>
-      </div>
+        </>
+      ) : (
+        <>
+          <div className="new-form">
+            <Form method="post">
+              <h2>Post a new Pizza</h2>
+
+              <input
+                type="text"
+                required
+                placeholder="Choose a name..."
+                name="name"
+              />
+
+              <input
+                step="0.1"
+                min="0"
+                placeholder="set the price..."
+                type="number"
+                name="price"
+                required
+              />
+
+              <input
+                type="text"
+                placeholder="Name the ingredients used..."
+                name="ingredients"
+                required
+              />
+
+              <input
+                step="0.1"
+                min="1"
+                max="5"
+                placeholder="set the rating..."
+                type="number"
+                name="Rating"
+                required
+              />
+
+              <input
+                type="text"
+                placeholder="set the image..."
+                name="photoName"
+                required
+              />
+              <div className="checkbox-div">
+                <label>sold Out</label>
+                <input
+                  type="checkBox"
+                  name="soldOut"
+                  value={sold ? sold : "false"}
+                  onChange={soldOutHandler}
+                  className="checkbox"
+                />
+              </div>
+              <button className="submit-btn">Add Pizza</button>
+            </Form>
+          </div>
+        </>
+      )}
     </>
   );
 }
