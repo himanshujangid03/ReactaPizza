@@ -1,3 +1,16 @@
+# React Pizza - MERN Stack Project
+
+Welcome to ReactPizza, a full-stack web application built using the MERN (MongoDB, Express, React, Node.js) stack. This project aims to provide a platform for ordering delicious pizzas online while showcasing various web development skills.
+
+## Project Demo
+
+[Watch the demo video](https://drive.google.com/file/d/1AfWlS8-GZaMAkrGeA1z1IR6Jh5_LPC6O/view)
+
+## Project Status
+
+🚧 This project is currently under development and is a work in progress. We are actively working on adding new features, improving existing functionality, and refining the user experience.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
