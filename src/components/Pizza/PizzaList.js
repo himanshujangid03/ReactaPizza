@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Pizza from "./Pizza";
 import Util from "./Util";
-import { API, sortByPriceAPI, sortByRatingAPI } from "../Context/api";
 import { useRouteLoaderData } from "react-router-dom";
 
 const PizzaList = (props) => {
   const pizzaData = useRouteLoaderData("pizza-loader");
   const [query, setQuery] = useState("");
-  //const history = use;
 
   const filteredPizzas = query
     ? pizzaData.filter((item) =>
@@ -59,8 +57,6 @@ export default PizzaList;
 export async function loader({ request, params }) {
   const searchParams = new URL(request.url).searchParams;
   const sort = searchParams.get("sort");
-  console.log(sort);
-
   let API = "http://localhost:8000/getdata";
   if (sort === "price") {
     API = API + "?sort=price";
@@ -72,5 +68,10 @@ export async function loader({ request, params }) {
   const response = await fetch(API, {
     method: "GET",
   });
+
+  if (!response.ok) {
+    return response;
+  }
+
   return response;
 }

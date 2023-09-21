@@ -1,17 +1,29 @@
-import { useState } from "react";
-import { Form, Link, json, redirect } from "react-router-dom";
-import { postNewPizza } from "../Context/api";
-import "./pizza-detail.css";
+import { useEffect, useState } from 'react';
+import { Form, Link, redirect, useActionData } from 'react-router-dom';
+import { postNewPizza } from '../Context/api';
+import './pizza-detail.css';
 
 function NewPizza() {
   const [sold, setSold] = useState(false);
+  const [errorData, setErrorData] = useState(undefined);
+  const token = localStorage.getItem('token');
+
+  const data = useActionData();
+  console.log(data);
   function soldOutHandler(e) {
     setSold((el) => !el);
   }
-
-  const token = localStorage.getItem("token");
+  useEffect(() => {
+    setErrorData(data);
+    setTimeout(() => {
+      setErrorData(null);
+    }, 500);
+  }, [data]);
   return (
     <>
+      <div>
+        <h2>{errorData && errorData.message}</h2>
+      </div>
       {!token ? (
         <>
           <div className="new-form___admin">
@@ -29,12 +41,7 @@ function NewPizza() {
             <Form method="post">
               <h2>Post a new Pizza</h2>
 
-              <input
-                type="text"
-                required
-                placeholder="Choose a name..."
-                name="name"
-              />
+              <input type="text" placeholder="Choose a name..." name="name" />
 
               <input
                 step="0.1"
@@ -42,14 +49,12 @@ function NewPizza() {
                 placeholder="set the price..."
                 type="number"
                 name="price"
-                required
               />
 
               <input
                 type="text"
                 placeholder="Name the ingredients used..."
                 name="ingredients"
-                required
               />
 
               <input
@@ -59,21 +64,19 @@ function NewPizza() {
                 placeholder="set the rating..."
                 type="number"
                 name="Rating"
-                required
               />
 
               <input
                 type="text"
                 placeholder="set the image..."
                 name="photoName"
-                required
               />
               <div className="checkbox-div">
                 <label>sold Out</label>
                 <input
                   type="checkBox"
                   name="soldOut"
-                  value={sold ? sold : "false"}
+                  value={sold ? sold : 'false'}
                   onChange={soldOutHandler}
                   className="checkbox"
                 />
@@ -92,28 +95,27 @@ export default NewPizza;
 export async function action({ request, params }) {
   const data = await request.formData();
   const newPizzaData = {
-    name: data.get("name"),
-    ingredients: data.get("ingredients"),
-    price: data.get("price"),
-    Rating: data.get("Rating"),
-    photoName: data.get("photoName"),
-    soldOut: data.get("soldOut"),
+    name: data.get('name'),
+    ingredients: data.get('ingredients'),
+    price: data.get('price'),
+    Rating: data.get('Rating'),
+    photoName: data.get('photoName'),
+    soldOut: data.get('soldOut'),
   };
+  const token = localStorage.getItem('token');
 
   const response = await fetch(postNewPizza, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      /* prettier-ignore */
+      'Authorization': 'Bearer ' + token,
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(newPizzaData),
   });
-
-  if (response.status === 404) {
+  if (response.status === 500 || 404 || 401) {
     return response;
   }
-  if (!response.ok) {
-    console.log("Could not post pizzas");
-    json({ message: "Could not post events" });
-  }
-  return redirect("/");
+
+  return redirect('/');
 }

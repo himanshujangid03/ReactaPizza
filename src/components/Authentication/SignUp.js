@@ -32,28 +32,28 @@ const SignUp = (props) => {
         )}
         <Form method="post">
           <p>Create your new Account</p>
-          <label>Name</label>
+          <label>Name:</label>
           <input
             type="name"
             id="name"
             name="name"
             placeholder="please enter your name"
           />
-          <label>Email</label>
+          <label>Email:</label>
           <input
             type="email"
             id="email"
             name="email"
             placeholder="please enter your email address"
           />
-          <label>Password</label>
+          <label>Password:</label>
           <input
             type="password"
             id="password"
             name="password"
             placeholder="please enter your password"
           />
-          <label>Password Confirm</label>
+          <label>Password Confirm:</label>
           <input
             type="password"
             id="passwordConfirm"

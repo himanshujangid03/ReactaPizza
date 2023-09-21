@@ -1,20 +1,23 @@
-import PizzaList from "../Pizza/PizzaList";
-import "./Homepage.css";
-import seaFood_Pizza from "../../images/seafood-pizza.jpg";
-import { useRef } from "react";
+import PizzaList from '../Pizza/PizzaList';
+import './Homepage.css';
+import seaFood_Pizza from '../../images/seafood-pizza.jpg';
+import { useRef } from 'react';
 
 function HomePage(props) {
   const targetRef = useRef(null);
   function scrollToPizza() {
     if (targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: "smooth" });
+      targetRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }
   return (
     <>
       <div className="home-page">
+        {/* <div className="bg-gradient"></div> */}
         <div>
-          <h1>Your destination for delicious pizza</h1>
+          <h1>
+            Your destination for <span>delicious</span> pizza
+          </h1>
           <button className="scrollToPizza-btn" onClick={scrollToPizza}>
             Order now
           </button>

@@ -9,7 +9,7 @@ import {
 import "./form.css";
 import { loginAPI } from "../Context/api";
 import ErrorAuthModal from "./ErrorAuthModal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Login(props) {
   const [errModal, setErrModal] = useState(false);
@@ -61,14 +61,14 @@ function Login(props) {
           )}
           <Form method="post" autoComplete="off">
             <p>Login to your Account</p>
-            <label>Email</label>
+            <label>Email:</label>
             <input
               type="email"
               id="email"
               name="email"
               placeholder="please enter your email address"
             />
-            <label>Password</label>
+            <label>Password:</label>
             <input
               type="password"
               id="password"

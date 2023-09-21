@@ -214,6 +214,7 @@ body {
   border-radius: 1.5rem;
   height: auto;
   width: 100%;
+  z-index: -1;
 }
 
 .pizza div {
@@ -239,7 +240,10 @@ body {
 
 .pizza span {
   font-size: 1.6rem;
-  font-weight: bold;
+}
+.pizza .price {
+  font-size: 1.6rem;
+  color: #00a81c;
 }
 
 .pizza.sold-out {
@@ -276,9 +280,8 @@ body {
   border-radius: 2rem;
   border: none;
   font-size: 16px;
-  background-color: #d1b65c4f;
+  background-color: #f1d47498;
   cursor: pointer;
-  color: grey;
   font-family: "Roboto Mono", sans-serif;
 }
 
@@ -289,12 +292,12 @@ body {
 
 .rating-price button.disable:hover {
   background-color: rgba(128, 128, 128, 0.082);
-  color: gray;
+  color: rgb(199, 199, 199);
 }
 
 .rating-price button:hover {
   color: black;
-  background-color: #d1b65c85;
+  background-color: #d4be3db9;
 }
 
 /* *************** */

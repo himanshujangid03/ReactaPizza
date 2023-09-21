@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import "./navbar.css";
-import { Link, NavLink } from "react-router-dom";
-import AuthContext from "../Context/auth-context";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from 'react';
+import './navbar.css';
+import { Link, NavLink } from 'react-router-dom';
+import AuthContext from '../Context/auth-context';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = (props) => {
   const shoppingCart = (
@@ -17,10 +17,10 @@ const NavBar = (props) => {
   );
 
   const navLinkClass = ({ isActive }) => {
-    return isActive ? "active" : "";
+    return isActive ? 'active' : '';
   };
   const ctx = useContext(AuthContext);
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   return (
     <>
       <></>
@@ -32,13 +32,13 @@ const NavBar = (props) => {
         <div className="nav-right">
           <div className="cart-icon-badge">
             <NavLink
-              className={({ isActive }) => (isActive ? "active-cart" : "")}
-              to={"/cart"}
+              className={({ isActive }) => (isActive ? 'active-cart' : '')}
+              to={'/cart'}
             >
               {shoppingCart}
               <span
                 className={`badge ${
-                  ctx.cartItem.length === 0 ? "hidden" : ""
+                  ctx.cartItem.length === 0 ? 'hidden' : ''
                 } `}
               >
                 {ctx.cartItem.length}
@@ -47,13 +47,13 @@ const NavBar = (props) => {
           </div>
           <ul>
             <li className="new-pizza-lst">
-              <NavLink className={navLinkClass} to={"/new-pizza"}>
-                New Pizza
+              <NavLink className={navLinkClass} to={'/new-pizza'}>
+                Admin Panel
               </NavLink>
             </li>
             <li className="login-btn">
               <NavLink to={`/login`} className={navLinkClass}>
-                {token ? "Logout" : "Login"}
+                {token ? 'Logout' : 'Login'}
               </NavLink>
             </li>
           </ul>

@@ -1,3 +1,5 @@
+/* ------------      INCLUDES NAVBARJS     ------------------*/
+
 .navbar {
   top: 2rem;
   display: flex;
@@ -59,7 +61,7 @@
   background-color: rgba(235, 235, 235, 0);
   font-size: 2rem;
   font-weight: 600;
-  font-family: "Roboto Mono", sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
@@ -72,7 +74,7 @@
   background-color: rgba(235, 235, 235, 0);
   font-size: 2rem;
   font-weight: 600;
-  font-family: "Roboto Mono", sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   cursor: pointer;
   transition: 0.2s ease-in-out;
   text-align: center;

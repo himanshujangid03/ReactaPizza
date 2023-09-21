@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../Context/auth-context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
@@ -32,7 +32,7 @@ const CartItem = (props) => {
         <div className="cartPizza__div">
           <h3 key={props.item.name}>{props.item.name}</h3>
           <p>{props.item.ingredients}</p>
-          <div className="rating-price">
+          <div className="cart-rating-price">
             <div>
               <span>{props.item.Rating}</span>
               <span>
