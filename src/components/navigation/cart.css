@@ -1,3 +1,5 @@
+/* ------------      INCLUDES CARTJS CARTITEMJS     ------------------*/
+
 .cartPizza__div {
   width: 100%;
 }
@@ -67,7 +69,7 @@
   size: 3rem;
 }
 
-.cartPizza .rating-price {
+.cartPizza .cart-rating-price {
   height: 100%;
   padding: 0 15px 0 5px;
   display: flex;
@@ -76,7 +78,7 @@
   justify-content: space-between;
 }
 
-.rating-price .calPrice-cart-btn {
+.cart-rating-price .calPrice-cart-btn {
   height: 100%;
 }
 
@@ -86,7 +88,7 @@
   font-weight: 600;
 }
 
-.cartPizza .rating-price button {
+.cartPizza .cart-rating-price button {
   padding: 1rem 1.5rem 1rem 1.5rem;
   border-radius: 2rem;
   border: none;
@@ -97,17 +99,17 @@
   font-family: "Roboto Mono", sans-serif;
 }
 
-.cartPizza .rating-price button.disable {
+.cartPizza .cart-rating-price button.disable {
   cursor: not-allowed;
   background-color: rgba(128, 128, 128, 0.082);
 }
 
-.cartPizza .rating-price button.disable:hover {
+.cartPizza .cart-rating-price button.disable:hover {
   background-color: rgba(128, 128, 128, 0.082);
   color: gray;
 }
 
-.cartPizza .rating-price button:hover {
+.cartPizza .cart-rating-price button:hover {
   color: black;
   background-color: #d1b65c85;
 }
@@ -180,7 +182,7 @@ hr {
   color: rgb(180, 2, 2);
 }
 
-.rating-price .price-increment-btn {
+.cart-rating-price .price-increment-btn {
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -202,11 +204,12 @@ hr {
   height: 3rem;
   width: 3rem;
   border-radius: 100%;
-  background-color: #ffe600;
+  background-color: #ffc400;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  animation: bounce 0.2s;
 }
 
 .price-increment-btn span.animate {

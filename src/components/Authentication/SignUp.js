@@ -1,34 +1,98 @@
-import { Form, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Form, Link, redirect, useActionData } from "react-router-dom";
+import { signUpAPI } from "../Context/api";
+import ErrorAuthModal from "./ErrorAuthModal";
 
-const SignUp = () => {
+const SignUp = (props) => {
+  let data = useActionData();
+  const [errModal, setErrModal] = useState(false);
+
+  const errorModalHandler = () => {
+    if (data) {
+      setErrModal((el) => !el);
+    }
+  };
+
+  const signedUpMessage = "You are Signed in successfully!";
+
+  useEffect(() => {
+    setTimeout(() => {
+      setErrModal(false);
+    }, 1000);
+  }, [errModal]);
+
   return (
     <>
       <div className="login-form">
-        <h2>Fast React Pizza Co.</h2>
-        <Form>
+        <Link to={"/"}>
+          <p className="link-to-home">Back to home page</p>
+        </Link>
+        {errModal && (
+          <ErrorAuthModal data={data} signedUpMessage={signedUpMessage} />
+        )}
+        <Form method="post">
           <p>Create your new Account</p>
-          <label>Email</label>
+          <label>Name:</label>
+          <input
+            type="name"
+            id="name"
+            name="name"
+            placeholder="please enter your name"
+          />
+          <label>Email:</label>
           <input
             type="email"
             id="email"
             name="email"
             placeholder="please enter your email address"
           />
-          <label>Password</label>
+          <label>Password:</label>
           <input
             type="password"
             id="password"
             name="password"
             placeholder="please enter your password"
           />
-          <button className="submit-btn">Submit</button>
+          <label>Password Confirm:</label>
+          <input
+            type="password"
+            id="passwordConfirm"
+            name="passwordConfirm"
+            placeholder="please confirm your password"
+          />
+          <button className="submit-btn" onClick={errorModalHandler}>
+            Submit
+          </button>
+          <p className="login-form-p">
+            Already have an account! <Link to={`/login`}>Login</Link>
+          </p>
         </Form>
-        <p className="login-form-p">
-          Already have an account! <NavLink to={"/login"}>Login</NavLink>
-        </p>
       </div>
     </>
   );
 };
 
 export default SignUp;
+
+export async function signUpAction({ request, params }) {
+  const data = await request.formData();
+  const userData = {
+    name: data.get("name"),
+    email: data.get("email"),
+    password: data.get("password"),
+    passwordConfirm: data.get("passwordConfirm"),
+  };
+
+  const response = await fetch(signUpAPI, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
+
+  if (response.status === 404) {
+    return response;
+  }
+  return redirect("/");
+}

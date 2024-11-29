@@ -1,5 +1,6 @@
+/* ------------      INCLUDES NAVBARJS     ------------------*/
+
 .navbar {
-  position: sticky;
   top: 2rem;
   display: flex;
   background-color: #ffffffd7;
@@ -11,7 +12,6 @@
   margin: 2rem;
   border-radius: 1rem;
   border: 2px solid rgba(207, 207, 207, 0.705);
-  z-index: 99999;
   backdrop-filter: blur(3px);
 }
 
@@ -61,7 +61,7 @@
   background-color: rgba(235, 235, 235, 0);
   font-size: 2rem;
   font-weight: 600;
-  font-family: "Roboto Mono", sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
@@ -74,7 +74,7 @@
   background-color: rgba(235, 235, 235, 0);
   font-size: 2rem;
   font-weight: 600;
-  font-family: "Roboto Mono", sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   cursor: pointer;
   transition: 0.2s ease-in-out;
   text-align: center;
@@ -95,8 +95,12 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
-.new-pizza-lst:hover {
-  color: black;
+.login-btn a:hover {
+  background-color: rgb(231, 231, 231);
+}
+
+.new-pizza-lst a:hover {
+  background-color: rgb(231, 231, 231);
 }
 
 a.active {
@@ -106,39 +110,6 @@ a.active {
 }
 
 /*-------------------------       MODAL      -------------------------*/
-
-.modal,
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  position: fixed;
-}
-
-.overlay {
-  background: rgba(0, 0, 0, 0.637);
-}
-
-.modal-content {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  color: black;
-  max-width: 600px;
-  max-height: 300px;
-  padding: 1rem;
-  border-radius: 7px;
-}
-
-.modal-content form {
-  display: flex;
-  flex-direction: column;
-}
 
 form input {
   margin: 0.5rem;

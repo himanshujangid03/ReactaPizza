@@ -16,8 +16,8 @@ const Pizza = (props) => {
             <p>{props.pizzaObj.ingredients}</p>
             <div className="rating-price">
               <div>
-                <span>{props.pizzaObj.Rating}</span>
-                <span style={{ fontWeight: "bold" }}>
+                <span>⭐ {props.pizzaObj.Rating}</span>
+                <span className="price">
                   {props.pizzaObj.soldOut
                     ? "SOLD OUT"
                     : `$${props.pizzaObj.price}`}

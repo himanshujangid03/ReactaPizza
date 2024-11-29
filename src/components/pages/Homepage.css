@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@900&display=swap');
+
+.home-page {
+  height: 100vh;
+  max-width: 95%;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 2rem;
+}
+
+.home-page .bg-gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -20rem;
+  z-index: -1;
+  background: rgb(255, 81, 47);
+  background: radial-gradient(
+    circle,
+    rgba(255, 81, 47, 0.4682247899159664) 0%,
+    rgba(255, 255, 255, 1) 33%
+  );
+}
+
+.home-page div {
+  width: fit-content;
+}
+
+.home-page h1 {
+  margin-top: 10rem;
+  font-size: 10rem;
+  font-family: 'Fira Sans', sans-serif;
+  text-transform: capitalize;
+}
+
+.home-page span {
+  background: #ff512f;
+  background: -webkit-linear-gradient(to right, #f09819, #ff512f);
+  background: linear-gradient(to right, #f09819, #ff512f);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.scrollToPizza-btn {
+  margin: 2rem auto;
+  width: 25rem;
+  padding: 1.5rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 5rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.scrollToPizza-btn:hover {
+  background-color: rgb(46, 46, 46);
+  color: white;
+}
+
+.image-section {
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2rem;
+}

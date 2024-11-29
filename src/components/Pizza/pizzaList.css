@@ -90,7 +90,7 @@ body {
 /* ------------------------------------  */
 
 .container {
-  max-width: 90%;
+  max-width: 95%;
   margin: 0 auto;
 
   display: flex;
@@ -186,14 +186,15 @@ body {
 .pizzas {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 4.5rem;
 }
 
 .pizza {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 2rem;
   transition: all 0.2s;
   padding: 1.5rem;
   border-radius: 2.5rem;
@@ -211,14 +212,15 @@ body {
   width: 12rem;
   aspect-ratio: 1;
   border-radius: 1.5rem;
-  height: 16rem;
-  width: 16rem;
+  height: auto;
+  width: 100%;
+  z-index: -1;
 }
 
 .pizza div {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.5rem;
   padding: 0.4rem 0;
   border-radius: 7px;
 }
@@ -226,6 +228,7 @@ body {
 .pizza h3 {
   font-size: 2rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .pizza p {
@@ -237,6 +240,10 @@ body {
 
 .pizza span {
   font-size: 1.6rem;
+}
+.pizza .price {
+  font-size: 1.6rem;
+  color: #00a81c;
 }
 
 .pizza.sold-out {
@@ -255,8 +262,16 @@ body {
 .pizza .rating-price {
   padding: 0 15px 0 5px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.rating-price div {
+  display: flex;
+  flex-direction: row;
+  padding: 0 5px 0 5px;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -265,9 +280,8 @@ body {
   border-radius: 2rem;
   border: none;
   font-size: 16px;
-  background-color: #d1b65c4f;
+  background-color: #f1d47498;
   cursor: pointer;
-  color: grey;
   font-family: "Roboto Mono", sans-serif;
 }
 
@@ -278,12 +292,12 @@ body {
 
 .rating-price button.disable:hover {
   background-color: rgba(128, 128, 128, 0.082);
-  color: gray;
+  color: rgb(199, 199, 199);
 }
 
 .rating-price button:hover {
   color: black;
-  background-color: #d1b65c85;
+  background-color: #d4be3db9;
 }
 
 /* *************** */

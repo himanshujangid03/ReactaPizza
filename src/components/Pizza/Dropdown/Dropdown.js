@@ -4,6 +4,7 @@ import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import "./dropdown.css";
 import { API, sortByPriceAPI, sortByRatingAPI } from "../../Context/api";
 import AuthContext from "../../Context/auth-context";
+import { Link } from "react-router-dom";
 //import { useRouteLoaderData } from "react-router";
 
 const Dropdown = () => {
@@ -11,21 +12,10 @@ const Dropdown = () => {
   //const data = useRouteLoaderData("pizza-loader");
   const ctx = useContext(AuthContext);
 
-  const priceHandler = () => {
-    ctx.setSortQuery(sortByPriceAPI);
-    setIsAcive(false);
-  };
+  const priceHandler = () => {};
 
-  const ratingHandler = () => {
-    ctx.setSortQuery(sortByRatingAPI);
-    console.log(ctx.sortQuery);
-    setIsAcive(false);
-  };
-  const clearHandler = () => {
-    ctx.setSortQuery(API);
-    console.log(ctx.sortQuery);
-    setIsAcive(false);
-  };
+  const ratingHandler = () => {};
+  const clearHandler = () => {};
 
   return (
     <>
@@ -43,25 +33,34 @@ const Dropdown = () => {
         </div>
         {isActive && (
           <div className="dropdown-content">
-            <div
-              className={`dropdown-item ${
-                ctx.sortQuery === sortByPriceAPI ? "active-item" : ""
-              }`}
-              onClick={priceHandler}
-            >
-              Price
-            </div>
-            <div
-              className={`dropdown-item ${
-                ctx.sortQuery === sortByRatingAPI ? "active-item" : ""
-              }`}
-              onClick={ratingHandler}
-            >
-              Rating
-            </div>
-            <div className="dropdown-item" onClick={clearHandler}>
-              Clear All
-            </div>
+            <Link to={`?sort=price`}>
+              <div
+                className={`dropdown-item ${
+                  ctx.sortQuery === sortByPriceAPI ? "active-item" : ""
+                }`}
+                onClick={() => setIsAcive((el) => !el)}
+              >
+                Price
+              </div>
+            </Link>
+            <Link to={`?sort=rating`}>
+              <div
+                className={`dropdown-item ${
+                  ctx.sortQuery === sortByRatingAPI ? "active-item" : ""
+                }`}
+                onClick={() => setIsAcive((el) => !el)}
+              >
+                Rating
+              </div>
+            </Link>
+            <Link to={`/`}>
+              <div
+                className="dropdown-item"
+                onClick={() => setIsAcive((el) => !el)}
+              >
+                Clear All
+              </div>
+            </Link>
           </div>
         )}
       </div>

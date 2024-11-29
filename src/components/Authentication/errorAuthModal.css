@@ -1,0 +1,154 @@
+/* ------------      INCLUDES ERRORAUTHMODALJS FORMMODALJS     ------------------*/
+
+.errorAuthModal {
+  position: absolute;
+  top: 10%;
+  padding: 1.5rem;
+  background-color: rgb(255, 98, 98);
+  width: 60rem;
+  max-width: 90%;
+  border-radius: 1.5rem;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+  animation: popupAnimation 0.2s;
+}
+
+.errorAuthModal.isLogin {
+  background-color: rgb(111, 255, 111);
+  transition: none;
+}
+
+@keyframes popupAnimation {
+  from {
+    opacity: 0.5;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorAuthModal p {
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+/* -----------------------------  FORM MODAL ----------------------------*/
+
+.modal,
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.637);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  padding: 1rem;
+  width: 70rem;
+  max-width: 80%;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  font-weight: 100;
+  transition: all 0.2s;
+  animation: popupAnime 1s;
+}
+
+@keyframes popupAnime {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.close-modal-btn {
+  display: flex;
+  align-self: flex-end;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  padding: 0.5rem;
+}
+
+.close-modal-btn:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.close-modal-btn p {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content h2 {
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: 600;
+  margin: 1rem;
+}
+.modal-content h3 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  margin: 1rem;
+}
+
+.modal-content p {
+  font-size: 1.7rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.modal-content .break {
+  height: 0.1px;
+  border-radius: 5rem;
+  width: 40rem;
+  max-width: 90%;
+  background-color: grey;
+}
+
+.modal-content .form-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.form-btn button {
+  margin: 3rem 1rem 1rem 0;
+  padding: 1rem;
+  width: 15rem;
+  max-width: 90%;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  border: none;
+  font-size: 2rem;
+  background-color: rgb(226, 226, 226);
+  transition: all 0.2s;
+}
+
+.form-btn button:hover {
+  background-color: rgb(83, 83, 83);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* -----------------------------  FORM MODAL ----------------------------*/

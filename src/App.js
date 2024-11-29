@@ -6,8 +6,9 @@ import NewPizza, {
 } from "./components/Pizza/NewPizza";
 import Error from "./components/pages/Error";
 import Cart from "./components/navigation/Cart";
-import Login from "./components/Authentication/Login";
-import SignUp from "./components/Authentication/SignUp";
+import Login, { loginAction } from "./components/Authentication/Login";
+import SignUp, { signUpAction } from "./components/Authentication/SignUp";
+import HomePage from "./components/pages/Homepage";
 
 const router = createBrowserRouter([
   {
@@ -17,13 +18,13 @@ const router = createBrowserRouter([
     loader: loader,
     id: "pizza-loader",
     children: [
-      { index: true, element: <PizzaList /> },
+      { index: true, element: <HomePage /> },
       { path: "/new-pizza", element: <NewPizza />, action: newPizzaAction },
       { path: "/cart", element: <Cart /> },
-      { path: "/login", element: <Login /> },
-      { path: "/signup", element: <SignUp /> },
     ],
   },
+  { path: "/login", element: <Login />, action: loginAction },
+  { path: "/signup", element: <SignUp />, action: signUpAction },
 ]);
 
 const App = () => {
